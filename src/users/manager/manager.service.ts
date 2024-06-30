@@ -14,8 +14,8 @@ import { AnimalTypeInput } from "../../database/inputs/animal_type.input";
 import { AnimalInput } from "../../database/inputs/animal.input";
 import { AnimalValidator } from "../../database/validators/animal.validator";
 import { CustomerUpdateInput } from "../../database/inputs/customer-update.input";
-import firestoreService from "src/firebase/firestore.service";
-import { CollectionEnum, KeyEnum } from "src/enum";
+import firestoreService from "../../firebase/firestore.service";
+import { CollectionEnum, KeyEnum } from "../../enum";
 
 @Injectable()
 export class ManagerService {

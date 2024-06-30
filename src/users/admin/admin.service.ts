@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { ManagerInput } from '../../database/inputs/manager.input';
 import { UserValidator } from "../../database/validators/user.validor";
 import { ScheduleValidator } from "../../database/validators/schedule.validator";
-import firestoreService from "src/firebase/firestore.service";
-import { CollectionEnum, KeyEnum } from "src/enum";
+import firestoreService from "../../firebase/firestore.service";
+import { CollectionEnum, KeyEnum } from "../../enum";
 
 @Injectable()
 export class AdminService {

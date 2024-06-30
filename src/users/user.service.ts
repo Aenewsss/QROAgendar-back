@@ -2,8 +2,8 @@ import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { UserValidator } from "../database/validators/user.validor";
 import * as bcrypt from "bcrypt"
-import firestoreService from "src/firebase/firestore.service";
-import { CollectionEnum, KeyEnum } from "src/enum";
+import firestoreService from "../firebase/firestore.service";
+import { CollectionEnum, KeyEnum } from "../enum";
 
 @Injectable()
 export class UserService {

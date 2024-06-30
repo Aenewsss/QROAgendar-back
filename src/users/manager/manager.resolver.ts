@@ -17,7 +17,7 @@ import { AnimalTypeInput } from "../../database/inputs/animal_type.input";
 import { AnimalValidator } from "../../database/validators/animal.validator";
 import { VetService } from "../vet/vet.service";
 import { CustomerUpdateInput } from "../../database/inputs/customer-update.input";
-import { GqlAuthGuard } from "src/guards/auth.guard";
+import { GqlAuthGuard } from "../../guards/auth.guard";
 
 @Resolver()
 export class ManagerResolver {

@@ -4,8 +4,8 @@ import { AuthType } from './auth.type';
 import * as bcrypt from "bcrypt";
 import { TokenType } from "./token.type";
 import { UserValidator } from "../database/validators/user.validor";
-import { CollectionEnum, KeyEnum } from "src/enum";
-import firestoreService from "src/firebase/firestore.service";
+import { CollectionEnum, KeyEnum } from "../enum";
+import firestoreService from "../firebase/firestore.service";
 
 @Injectable()
 export class AuthService {

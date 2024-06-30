@@ -6,8 +6,8 @@ import { UserValidator } from "../../database/validators/user.validor";
 import { roleEnum } from "../../database/dto/role.enum";
 import { AnimalTypeValidator } from "../../database/validators/animal-type.validator";
 import { SpecialtyValidator } from "../../database/validators/specialty.validator";
-import firestoreService from "src/firebase/firestore.service";
-import { CollectionEnum, KeyEnum } from "src/enum";
+import firestoreService from "../../firebase/firestore.service";
+import { CollectionEnum, KeyEnum } from "../../enum";
 
 @Injectable()
 export class VetService {

@@ -1,11 +1,11 @@
-import { CollectionEnum, KeyEnum } from "src/enum";
+import { CollectionEnum, KeyEnum } from "../enum";
 import firebaseService from "./firebase.service";
-import { ISort, IWhereParams } from "src/interface";
+import { ISort, IWhereParams } from "../interface";
 import { FieldValue } from "firebase-admin/firestore";
-import { AnimalInput } from "src/database/inputs/animal.input";
-import { UserValidator } from "src/database/validators/user.validor";
+import { AnimalInput } from "../database/inputs/animal.input";
+import { UserValidator } from "../database/validators/user.validor";
 import * as bcrypt from "bcrypt";
-import { roleEnum } from "src/database/dto/role.enum";
+import { roleEnum } from "../database/dto/role.enum";
 
 class FirestoreService {
 
