@@ -51,7 +51,8 @@ export class ManagerService {
     }
 
     async getCustomerById(id: string): Promise<UserValidator> {
-        return await firestoreService.getById(CollectionEnum.users, id)
+        const customer = await firestoreService.getById(CollectionEnum.users, id)
+        return {birthdate: customer.birthdate.toDate(),...customer}
     }
 
     async removeCustomer(id: string): Promise<UserValidator> {

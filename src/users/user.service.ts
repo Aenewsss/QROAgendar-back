@@ -8,7 +8,9 @@ import { CollectionEnum, KeyEnum } from "../enum";
 @Injectable()
 export class UserService {
     async getUserById(id: string): Promise<UserValidator> {
-        return await firestoreService.getById(CollectionEnum.users, id)
+        const user = await firestoreService.getById(CollectionEnum.users, id)
+        if (user?.birthdate && user?.animals) return { ...user, birthdate: user.birthdate.toDate(), animals: Object.values(user.animals) }
+        return user
     }
 
     async changePassword(email: string, newPassword: string, repeatNewPassword: string): Promise<UserValidator> {

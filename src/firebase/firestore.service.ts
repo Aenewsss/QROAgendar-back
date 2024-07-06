@@ -31,8 +31,7 @@ class FirestoreService {
         const dbRef = this.db.collection(collection)
 
         const doc = await dbRef.doc(id).get()
-
-        return doc.data()
+        return { id: doc.id, ...doc.data() }
     }
 
     async getWhere(collection: CollectionEnum, whereParams: IWhereParams, sort?: ISort): Promise<any> {
@@ -90,7 +89,7 @@ class FirestoreService {
 
         if (querySnapshot.empty) return []
 
-        const formatted = querySnapshot.docs.map(doc => ({ ...doc.data(), date: new Date(doc.data().date.toDate()),  }))
+        const formatted = querySnapshot.docs.map(doc => ({ ...doc.data(), date: new Date(doc.data().date.toDate()), }))
         const filtered = formatted.filter(doc => doc.date >= startDate && doc.date <= finalDate)
 
         return filtered
@@ -105,7 +104,7 @@ class FirestoreService {
 
         if (querySnapshot.empty) return [];
 
-        return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        return querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data(), date: doc.data().date.toDate() }));
     }
 
     async increaseSpecialtyQttEmployees(collection: CollectionEnum, specialty_id: string): Promise<void> {
